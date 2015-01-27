@@ -31,8 +31,13 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MyClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Dto\ServerDto.cs" />
+    <Compile Include="Request\Base\BaseRequest.cs" />
+    <Compile Include="Request\Base\BaseResponse.cs" />
+    <Compile Include="Request\Base\AuthRequest.cs" />
+    <Compile Include="Request\ShadowServer\GetServerListRequest.cs" />
+    <Compile Include="Request\ShadowServer\GetServerListResponse.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -40,5 +45,12 @@
       <Project>{6A0962BE-9A1A-47E9-8ED7-93581EE66402}</Project>
       <Name>Sweet.LoveWinne.Utility</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Dto\" />
+    <Folder Include="Entity\" />
+    <Folder Include="Request\" />
+    <Folder Include="Request\Base\" />
+    <Folder Include="Request\ShadowServer\" />
   </ItemGroup>
 </Project>

@@ -3,7 +3,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Web.Mvc;
 using System.Web.Routing;
 using System.Web.Http;
 
@@ -22,10 +21,6 @@ namespace Sweet.LoveWinne.WebApiHost
 
 			//注册Filters
 //			FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
-
-			//设置视图格式
-			ViewEngines.Engines.Clear();
-			ViewEngines.Engines.Add(new RazorViewEngine());
 
 			//设置API返回格式
 //			GlobalConfiguration.Configuration.Formatters.Clear();
