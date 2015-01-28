@@ -33,11 +33,14 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Dto\ServerDto.cs" />
-    <Compile Include="Request\Base\BaseRequest.cs" />
-    <Compile Include="Request\Base\BaseResponse.cs" />
-    <Compile Include="Request\Base\AuthRequest.cs" />
-    <Compile Include="Request\ShadowServer\GetServerListRequest.cs" />
-    <Compile Include="Request\ShadowServer\GetServerListResponse.cs" />
+    <Compile Include="Entity\UserInfo.cs" />
+    <Compile Include="Entity\MachineInfo.cs" />
+    <Compile Include="Entity\ValidateQuestion.cs" />
+    <Compile Include="Enum\QuestionTypeEnum.cs" />
+    <Compile Include="Entity\QuestionAnswer.cs" />
+    <Compile Include="Messages\ShadowServer\GetServerListRequest.cs" />
+    <Compile Include="Messages\ShadowServer\GetServerListResponse.cs" />
+    <Compile Include="Messages\Authentication\AuthRequest.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -45,12 +48,17 @@
       <Project>{6A0962BE-9A1A-47E9-8ED7-93581EE66402}</Project>
       <Name>Sweet.LoveWinne.Utility</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Sweet.LoveWinne.Infrastructure\Sweet.LoveWinne.Infrastructure.csproj">
+      <Project>{6D94FD2D-4567-438A-8B34-56191D0D8B17}</Project>
+      <Name>Sweet.LoveWinne.Infrastructure</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Dto\" />
     <Folder Include="Entity\" />
-    <Folder Include="Request\" />
-    <Folder Include="Request\Base\" />
-    <Folder Include="Request\ShadowServer\" />
+    <Folder Include="Enum\" />
+    <Folder Include="Messages\" />
+    <Folder Include="Messages\ShadowServer\" />
+    <Folder Include="Messages\Authentication\" />
   </ItemGroup>
 </Project>

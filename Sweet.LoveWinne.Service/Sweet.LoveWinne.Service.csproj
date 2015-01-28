@@ -31,7 +31,6 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MyClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
@@ -48,5 +47,8 @@
       <Project>{6A0962BE-9A1A-47E9-8ED7-93581EE66402}</Project>
       <Name>Sweet.LoveWinne.Utility</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Contract\" />
   </ItemGroup>
 </Project>
