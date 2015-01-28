@@ -1,34 +1,23 @@
 ﻿<Properties StartupItem="Sweet.LoveWinne.WebApiHost\Sweet.LoveWinne.WebApiHost.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="ChromeHTML" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Sweet.LoveWinne.Repository\OrmLiteRepository.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Sweet.LoveWinne.Service\Contract\IAccountService.cs">
     <Files>
-      <File FileName="Sweet.LoveWinne.WebApiHost\App_Start\WebApiConfig.cs" Line="2" Column="2" />
-      <File FileName="Sweet.LoveWinne.WebApiHost\Global.asax.cs" Line="43" Column="43" />
-      <File FileName="Sweet.LoveWinne.Model\Entity\UserInfo.cs" Line="34" Column="34" />
-      <File FileName="Sweet.LoveWinne.Model\Entity\MachineInfo.cs" Line="37" Column="37" />
-      <File FileName="Sweet.LoveWinne.Model\Entity\ValidateQuestion.cs" Line="1" Column="1" />
-      <File FileName="Sweet.LoveWinne.Model\Enum\QuestionTypeEnum.cs" Line="17" Column="17" />
-      <File FileName="Sweet.LoveWinne.Model\Entity\QuestionAnswer.cs" Line="40" Column="40" />
-      <File FileName="Sweet.LoveWinne.Repository\Contract\IBaseRepository.cs" Line="48" Column="48" />
-      <File FileName="Sweet.LoveWinne.Repository\OrmLiteRepository.cs" Line="3" Column="3" />
-      <File FileName="Sweet.LoveWinne.Infrastructure\Model\BaseEntity.cs" Line="34" Column="34" />
-      <File FileName="Sweet.LoveWinne.Infrastructure\Messages\BaseRequest.cs" Line="17" Column="17" />
-      <File FileName="Sweet.LoveWinne.Infrastructure\Messages\BaseResponse.cs" Line="17" Column="17" />
-      <File FileName="Sweet.LoveWinne.Model\Messages\Authentication\AuthRequest.cs" Line="32" Column="32" />
+      <File FileName="Sweet.LoveWinne.Service\Contract\IAccountService.cs" Line="46" Column="46" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True" selected="True">
-          <Node name="Sweet.LoveWinne.Infrastructure" expanded="True">
-            <Node name="Messages" expanded="True" />
-            <Node name="Model" expanded="True" />
-          </Node>
           <Node name="Sweet.LoveWinne.Model" expanded="True">
             <Node name="Entity" expanded="True" />
+            <Node name="Messages" expanded="True">
+              <Node name="Account" expanded="True" />
+              <Node name="ShadowServer" expanded="True" />
+            </Node>
           </Node>
-          <Node name="Sweet.LoveWinne.Repository" expanded="True">
+          <Node name="Sweet.LoveWinne.Service" expanded="True">
             <Node name="Contract" expanded="True" />
           </Node>
+          <Node name="Sweet.LoveWinne.WebApiHost" expanded="True" />
         </State>
       </Pad>
     </Pads>

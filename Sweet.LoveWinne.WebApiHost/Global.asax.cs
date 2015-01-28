@@ -69,8 +69,6 @@ namespace Sweet.LoveWinne.WebApiHost
 				context.Response.Write (responseBuilder.ToString ());
 				context.Response.End ();
 			}
-
-
 		}
 	}
 }

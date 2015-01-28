@@ -32,13 +32,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Model\BaseEntity.cs" />
     <Compile Include="Messages\BaseRequest.cs" />
     <Compile Include="Messages\BaseResponse.cs" />
+    <Compile Include="Entity\BaseEntity.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
-    <Folder Include="Model\" />
     <Folder Include="Messages\" />
+    <Folder Include="Entity\" />
   </ItemGroup>
 </Project>

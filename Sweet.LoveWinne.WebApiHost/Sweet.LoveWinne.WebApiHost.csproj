@@ -57,6 +57,12 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="AutoMapper">
+      <HintPath>..\packages\AutoMapper.3.3.0\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper.Net4">
+      <HintPath>..\packages\AutoMapper.3.3.0\lib\net40\AutoMapper.Net4.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Web.config" />
@@ -70,6 +76,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="BootStrapper.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
@@ -99,6 +106,10 @@
     <ProjectReference Include="..\Sweet.LoveWinne.Utility\Sweet.LoveWinne.Utility.csproj">
       <Project>{6A0962BE-9A1A-47E9-8ED7-93581EE66402}</Project>
       <Name>Sweet.LoveWinne.Utility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sweet.LoveWinne.Infrastructure\Sweet.LoveWinne.Infrastructure.csproj">
+      <Project>{6D94FD2D-4567-438A-8B34-56191D0D8B17}</Project>
+      <Name>Sweet.LoveWinne.Infrastructure</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
