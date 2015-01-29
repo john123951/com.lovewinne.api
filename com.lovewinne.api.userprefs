@@ -1,16 +1,22 @@
 ﻿<Properties StartupItem="Sweet.LoveWinne.WebApiHost\Sweet.LoveWinne.WebApiHost.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="ChromeHTML" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Sweet.LoveWinne.Service\Contract\IAccountService.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Sweet.LoveWinne.Model\Entity\Users\UserInfo.cs">
     <Files>
-      <File FileName="Sweet.LoveWinne.Service\Contract\IAccountService.cs" Line="46" Column="46" />
+      <File FileName="Sweet.LoveWinne.Model\Entity\Users\UserInfo.cs" Line="3" Column="3" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
-        <State expanded="True" selected="True">
+        <State expanded="True">
           <Node name="Sweet.LoveWinne.Model" expanded="True">
-            <Node name="Entity" expanded="True" />
+            <Node name="Dto" expanded="True" />
+            <Node name="Entity" expanded="True">
+              <Node name="Products" expanded="True" />
+              <Node name="Questions" expanded="True" />
+              <Node name="Users" expanded="True">
+                <Node name="UserInfo.cs" selected="True" />
+              </Node>
+            </Node>
             <Node name="Messages" expanded="True">
-              <Node name="Account" expanded="True" />
               <Node name="ShadowServer" expanded="True" />
             </Node>
           </Node>

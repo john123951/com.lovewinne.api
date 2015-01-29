@@ -44,10 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Entity\UserInfo.cs" />
-    <Compile Include="Entity\MachineInfo.cs" />
     <Compile Include="Enum\QuestionTypeEnum.cs" />
-    <Compile Include="Entity\QuestionAnswer.cs" />
     <Compile Include="Messages\ShadowServer\GetServerListRequest.cs" />
     <Compile Include="Messages\ShadowServer\GetServerListResponse.cs" />
     <Compile Include="Messages\Authentication\AuthRequest.cs" />
@@ -60,11 +57,17 @@
     <Compile Include="Messages\Question\GetQuestionListRequest.cs" />
     <Compile Include="Messages\Question\GetQuestionListResponse.cs" />
     <Compile Include="Dto\Question\QuestionDto.cs" />
-    <Compile Include="Entity\Question.cs" />
     <Compile Include="Dto\Question\AnswerQuestionItem.cs" />
     <Compile Include="Messages\Question\AnswertQuestionListRequest.cs" />
     <Compile Include="Messages\Question\AnswertQuestionListResponse.cs" />
-    <Compile Include="Entity\ServerInfo.cs" />
+    <Compile Include="Entity\Users\UserInfo.cs" />
+    <Compile Include="Entity\Users\RoleInfo.cs" />
+    <Compile Include="Entity\Users\ActionInfo.cs" />
+    <Compile Include="Entity\Users\AdminUserInfo.cs" />
+    <Compile Include="Entity\Users\MachineInfo.cs" />
+    <Compile Include="Entity\Questions\Question.cs" />
+    <Compile Include="Entity\Questions\QuestionAnswer.cs" />
+    <Compile Include="Entity\Products\ServerInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -89,6 +92,9 @@
     <Folder Include="Messages\Account\" />
     <Folder Include="Messages\Question\" />
     <Folder Include="Dto\Question\" />
+    <Folder Include="Entity\Users\" />
+    <Folder Include="Entity\Questions\" />
+    <Folder Include="Entity\Products\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
