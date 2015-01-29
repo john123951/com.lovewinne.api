@@ -1,9 +1,13 @@
 ﻿using System;
+using Sweet.LoveWinne.Infrastructure;
+using ServiceStack.DataAnnotations;
 
 namespace Sweet.LoveWinne.Model
 {
-	public class ServerDto
+	[Alias ("ServerInfo")]
+	public class ServerInfo : BaseEntity
 	{
+		[AutoIncrement]
 		public long Id { get; set; }
 
 		public string Server { set; get; }

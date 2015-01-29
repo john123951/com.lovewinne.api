@@ -3,9 +3,8 @@ using Sweet.LoveWinne.Infrastructure;
 
 namespace Sweet.LoveWinne.Model
 {
-	public class AuthRequest : BaseRequest
+	public class GetQuestionListRequest:BaseRequest
 	{
-		public UserInfo UserInfo { get; set; }
 	}
 }
 

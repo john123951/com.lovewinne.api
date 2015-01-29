@@ -3,7 +3,7 @@ using Sweet.LoveWinne.Infrastructure;
 
 namespace Sweet.LoveWinne.Model
 {
-	public class RegistryResponse:BaseResponse
+	public class RegisterResponse:BaseResponse
 	{
 		public string Token { get; set; }
 

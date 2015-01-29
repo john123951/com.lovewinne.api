@@ -1,14 +1,19 @@
 ﻿using System;
 using Sweet.LoveWinne.Infrastructure;
+using ServiceStack.DataAnnotations;
 
 namespace Sweet.LoveWinne.Model
 {
-	public class UserInfo:BaseEntity
+	[Alias ("UserInfo")]
+	public class UserInfo : BaseEntity
 	{
+		[AutoIncrement]
 		public long Id{ set; get; }
 
+		[StringLength (16)]
 		public string UserName{ set; get; }
 
+		[StringLength (256)]
 		public string Password{ set; get; }
 
 		/// <summary>

@@ -4,9 +4,6 @@ namespace Sweet.LoveWinne.Infrastructure
 {
 	public abstract class BaseRequest
 	{
-		public BaseRequest ()
-		{
-		}
 	}
 }
 

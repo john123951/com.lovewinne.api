@@ -24,8 +24,8 @@ namespace Sweet.LoveWinne.Repository
 			OrmLiteConfig.DialectProvider = MySqlDialect.Provider;
 
 			dbFactory = new OrmLiteConnectionFactory ();
-			OrmLiteConnectionFactory.NamedConnections.Add (Read, new OrmLiteConnectionFactory ("Data Source=192.168.0.187;Initial Catalog=HKSpecialNews;User Id=sa;Password=123456"));
-			OrmLiteConnectionFactory.NamedConnections.Add (Write, new OrmLiteConnectionFactory ("Data Source=192.168.0.187;Initial Catalog=HKSpecialNews;User Id=sa;Password=123456"));
+			OrmLiteConnectionFactory.NamedConnections.Add (Read, new OrmLiteConnectionFactory (GlobalConfig.GetInstance ().ConnectionString));
+			OrmLiteConnectionFactory.NamedConnections.Add (Write, new OrmLiteConnectionFactory (GlobalConfig.GetInstance ().ConnectionString));
 		}
 
 		public long Insert (T entity)

@@ -1,8 +1,9 @@
 ﻿using System;
+using Sweet.LoveWinne.Infrastructure;
 
 namespace Sweet.LoveWinne.Model
 {
-	public class GetServerListRequest
+	public class GetServerListRequest : BaseRequest
 	{
 
 	}

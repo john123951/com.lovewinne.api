@@ -6,10 +6,10 @@ namespace Sweet.LoveWinne.Service
 	public interface IAccountService
 	{
 		/// <summary>
-		/// Registry User
+		/// Register User
 		/// </summary>
 		/// <param name="request">Request.</param>
-		RegistryResponse Registry (RegistryRequest request);
+		RegisterResponse Register (RegisterRequest request);
 
 		/// <summary>
 		/// Login

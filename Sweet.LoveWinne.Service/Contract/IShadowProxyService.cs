@@ -1,5 +1,6 @@
 ﻿using System;
 using Sweet.LoveWinne.Model;
+using Sweet.LoveWinne.Infrastructure;
 
 namespace Sweet.LoveWinne.Service
 {
@@ -10,6 +11,7 @@ namespace Sweet.LoveWinne.Service
 		/// </summary>
 		/// <returns>The server list.</returns>
 		/// <param name="request">Request.</param>
+		[Authentication]
 		GetServerListResponse GetServerList (GetServerListRequest request);
 	}
 }
