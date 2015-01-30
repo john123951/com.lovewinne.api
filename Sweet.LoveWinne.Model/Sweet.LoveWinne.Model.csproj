@@ -68,6 +68,7 @@
     <Compile Include="Entity\Questions\Question.cs" />
     <Compile Include="Entity\Questions\QuestionAnswer.cs" />
     <Compile Include="Entity\Products\ServerInfo.cs" />
+    <Compile Include="Entity\Notify\NotifyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -95,6 +96,8 @@
     <Folder Include="Entity\Users\" />
     <Folder Include="Entity\Questions\" />
     <Folder Include="Entity\Products\" />
+    <Folder Include="Messages\Notify\" />
+    <Folder Include="Entity\Notify\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

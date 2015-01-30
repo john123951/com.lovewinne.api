@@ -3,14 +3,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
+using Sweet.LoveWinne.Service;
+using Sweet.LoveWinne.Model;
 
 namespace Sweet.LoveWinne.Controller
 {
-	public class ShadowServerController : ApiController
-    {
-        public string Index()
-        {
-			return "test";
-        }
-    }
+	public class ShadowServerController : ApiController , IShadowProxyService
+	{
+		IShadowProxyService _shadowProxyService;
+
+		public ShadowServerController (IShadowProxyService shadowProxyService)
+		{
+			_shadowProxyService = shadowProxyService;			
+		}
+
+		[HttpPost]
+		public GetServerListResponse GetServerList (GetServerListRequest request)
+		{
+			var result = _shadowProxyService.GetServerList (request);
+
+			return result;
+		}
+	}
 }

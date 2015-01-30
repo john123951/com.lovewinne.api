@@ -42,6 +42,8 @@
     <Compile Include="Contract\IShadowProxyService.cs" />
     <Compile Include="Contract\IQuestionService.cs" />
     <Compile Include="Contract\IAuthenticationService.cs" />
+    <Compile Include="AccountService.cs" />
+    <Compile Include="Contract\INotifyService.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

@@ -4,16 +4,16 @@ using System.Web.Http.Routing;
 
 namespace Sweet.LoveWinne.WebApiHost
 {
-    public static class WebApiConfig
-    {
-        public static void Register(HttpConfiguration config)
-        {
-            //测试
-            config.Routes.MapHttpRoute(
-                name: "Home",
+	public static class WebApiConfig
+	{
+		public static void Register (HttpConfiguration config)
+		{
+			//测试
+			config.Routes.MapHttpRoute (
+				name: "Home",
 				routeTemplate: "{controller}/{action}",
-                defaults: new { controller = "account", action = "index", httpMethod = new HttpMethodConstraint(HttpMethod.Get) }
-                );
-        }
-    }
+				defaults: new { controller = "Trace", action = "Test", httpMethod = new HttpMethodConstraint (HttpMethod.Get) }
+			);
+		}
+	}
 }

@@ -3,7 +3,7 @@ using Sweet.LoveWinne.Infrastructure;
 
 namespace Sweet.LoveWinne.Model
 {
-	public class RegisterRequest:BaseRequest
+	public class RegisterRequest : BaseRequest
 	{
 		public string UserName{ set; get; }
 

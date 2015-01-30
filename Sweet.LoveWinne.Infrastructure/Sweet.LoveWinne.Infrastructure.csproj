@@ -40,6 +40,8 @@
     <Compile Include="Authentication\ClientAuthAttribute.cs" />
     <Compile Include="Config\AppSettingsConfigManager.cs" />
     <Compile Include="Config\GlobalConfig.cs" />
+    <Compile Include="Interface\ICacheProvider.cs" />
+    <Compile Include="Service\BaseService.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -47,5 +49,7 @@
     <Folder Include="Entity\" />
     <Folder Include="Authentication\" />
     <Folder Include="Config\" />
+    <Folder Include="Interface\" />
+    <Folder Include="Service\" />
   </ItemGroup>
 </Project>
