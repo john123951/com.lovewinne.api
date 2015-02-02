@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Http;
 using Sweet.LoveWinne.Service;
 using Sweet.LoveWinne.Model;
+using Sweet.LoveWinne.Infrastructure;
 
 namespace Sweet.LoveWinne.Controller
 {
@@ -18,11 +19,12 @@ namespace Sweet.LoveWinne.Controller
 		}
 
 		[HttpPost]
-		public GetServerListResponse GetServerList (GetServerListRequest request)
+		public ServicesResult<GetServerListResult>  GetServerList (GetServerListRequest request)
 		{
 			var result = _shadowProxyService.GetServerList (request);
 
-			return result;
+			return null;
+//			return result;
 		}
 	}
 }

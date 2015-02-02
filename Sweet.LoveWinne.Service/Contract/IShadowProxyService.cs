@@ -12,7 +12,7 @@ namespace Sweet.LoveWinne.Service
 		/// <returns>The server list.</returns>
 		/// <param name="request">Request.</param>
 		[Authentication]
-		GetServerListResponse GetServerList (GetServerListRequest request);
+		ServicesResult<GetServerListResult> GetServerList (GetServerListRequest request);
 	}
 }
 

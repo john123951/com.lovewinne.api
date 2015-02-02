@@ -5,7 +5,7 @@ using Sweet.LoveWinne.Model;
 
 namespace Sweet.LoveWinne.Controller
 {
-	public class QuestionController: ApiController, IQuestionService
+	public class QuestionController: ApiController//, IQuestionService
 	{
 		IQuestionService _questionService;
 
@@ -14,21 +14,6 @@ namespace Sweet.LoveWinne.Controller
 			_questionService = questionService;
 		}
 
-		[HttpPost]
-		public GetQuestionListResponse GetQuestionList (GetQuestionListRequest request)
-		{
-			var result = _questionService.GetQuestionList (request);
-
-			return result;
-		}
-
-		[HttpPost]
-		public AnswertQuestionListResponse AnswertQuestionList (AnswertQuestionListRequest request)
-		{
-			var result = _questionService.AnswertQuestionList (request);
-
-			return result;
-		}
 	}
 }
 

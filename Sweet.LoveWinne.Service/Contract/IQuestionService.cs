@@ -1,5 +1,6 @@
 ﻿using System;
 using Sweet.LoveWinne.Model;
+using Sweet.LoveWinne.Infrastructure;
 
 namespace Sweet.LoveWinne.Service
 {
@@ -10,14 +11,14 @@ namespace Sweet.LoveWinne.Service
 		/// </summary>
 		/// <returns>The question list.</returns>
 		/// <param name="request">Request.</param>
-		GetQuestionListResponse GetQuestionList (GetQuestionListRequest request);
+		ServicesResult<GetQuestionListResult> GetQuestionList (GetQuestionListRequest request);
 
 		/// <summary>
 		/// Answert the question list.
 		/// </summary>
 		/// <returns>The question list.</returns>
 		/// <param name="request">Request.</param>
-		AnswertQuestionListResponse AnswertQuestionList (AnswertQuestionListRequest request);
+		ServicesResult<AnswertQuestionListResult> AnswertQuestionList (AnswertQuestionListRequest request);
 	}
 }
 

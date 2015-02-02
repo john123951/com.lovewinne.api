@@ -7,8 +7,8 @@ using Sweet.LoveWinne.Infrastructure;
 
 namespace Sweet.LoveWinne.Repository
 {
-	public class OrmLiteRepository<T> : IBaseRepository<T> 
-		where T :   BaseEntity
+	public class OrmLiteRepository<TEntity> : IRepository<TEntity> 
+		where TEntity :   BaseEntity, new()
 	{
 		private const string Read = "read";
 		private const string Write = "write";
@@ -28,7 +28,7 @@ namespace Sweet.LoveWinne.Repository
 			OrmLiteConnectionFactory.NamedConnections.Add (Write, new OrmLiteConnectionFactory (GlobalConfig.GetInstance ().ConnectionString));
 		}
 
-		public long Insert (T entity)
+		public long Insert (TEntity entity)
 		{
 			using (var db = DbFactory.Open (Write)) {
 				var result = db.Insert (entity);
@@ -37,7 +37,7 @@ namespace Sweet.LoveWinne.Repository
 			}
 		}
 
-		public bool Update (T entity)
+		public bool Update (TEntity entity)
 		{
 			using (var db = DbFactory.Open (Write)) {
 				var result = db.Update (entity);
@@ -46,54 +46,64 @@ namespace Sweet.LoveWinne.Repository
 			}
 		}
 
-		public bool SaveOrUpdate (T entity)
+		public bool SaveOrUpdate (TEntity entity)
 		{
 			throw new NotImplementedException ();
 		}
 
-		public bool Remove (T entity)
+		public bool Remove (TEntity entity)
 		{
 			throw new NotImplementedException ();
 		}
 
-		public int InsertTransaction (IEnumerable<T> entityList)
+		public int InsertTransaction (IEnumerable<TEntity> entityList)
 		{
 			throw new NotImplementedException ();
 		}
 
-		public int UpdateTransaction (IEnumerable<T> entityList)
+		public int UpdateTransaction (IEnumerable<TEntity> entityList)
 		{
 			throw new NotImplementedException ();
 		}
 
-		public int SaveOrUpdateTransaction (IEnumerable<T> entityList)
+		public int SaveOrUpdateTransaction (IEnumerable<TEntity> entityList)
 		{
 			throw new NotImplementedException ();
 		}
 
-		public int RemoveTransaction (IEnumerable<T> entityList)
+		public int RemoveTransaction (IEnumerable<TEntity> entityList)
 		{
 			throw new NotImplementedException ();
 		}
 
-		public List<T> LoadEntities (Func<SqlExpression<T>, SqlExpression<T>> whereLambda)
+		public List<TEntity> LoadEntities (Func<SqlExpression<TEntity>, SqlExpression<TEntity>> whereLambda)
 		{
 			using (var db = DbFactory.Open (Write)) {
 
-				var result = db.LoadSelect<T> (whereLambda);
+				var result = db.LoadSelect<TEntity> (whereLambda);
 
 				return result;
 			}
 		}
 
-		public List<T> LoadPageEntities (int pageIndex, int pageSize, out int totalCount,
-		                                 Expression<Func<T, bool>> whereLambda,
-		                                 Expression<Func<T, object>> orderLambda, bool isAsc = true)
+		public List<TEntity> LoadEntities (Expression<Func<TEntity, bool>> whereLambda)
+		{
+			using (var db = DbFactory.Open (Write)) {
+
+				var result = db.LoadSelect<TEntity> (whereLambda);
+
+				return result;
+			}
+		}
+
+		public List<TEntity> LoadPageEntities (int pageIndex, int pageSize, out int totalCount,
+		                                       Expression<Func<TEntity, bool>> whereLambda,
+		                                       Expression<Func<TEntity, object>> orderLambda, bool isAsc = true)
 		{
 			totalCount = 0;
 
 			using (var db = DbFactory.Open (Write)) {
-				Func<SqlExpression<T>, SqlExpression<T>> expr;
+				Func<SqlExpression<TEntity>, SqlExpression<TEntity>> expr;
 
 				if (isAsc) {
 					expr = s => s.Where (whereLambda).OrderBy (orderLambda).Skip (pageSize * (pageIndex - 1)).Take (pageSize);

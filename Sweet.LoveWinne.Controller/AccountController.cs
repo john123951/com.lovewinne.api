@@ -5,10 +5,12 @@ using System.Web;
 using System.Web.Http;
 using Sweet.LoveWinne.Service;
 using Sweet.LoveWinne.Model;
+using Sweet.LoveWinne.Infrastructure;
+using AutoMapper;
 
 namespace Sweet.LoveWinne.Controller
 {
-	public class AccountController : ApiController //, IAccountService
+	public class AccountController : DefaultApiController
 	{
 		IAccountService _accountService;
 
@@ -17,21 +19,30 @@ namespace Sweet.LoveWinne.Controller
 			_accountService = accountService;
 		}
 
-		[HttpPost]
-		public RegisterResponse Register (RegisterRequest request)
+		public BaseResponse<bool> Register (RegisterRequest request)
 		{
-			var result = _accountService.Register (request);
+			var parameter = Mapper.Map<RegisterParameter> (request);
 
-			return result;
+			var regResult = _accountService.Register (parameter);
+
+			if (regResult.IsSuccess) {
+				return Success (regResult.Result != null && regResult.Result.Id > 0);
+			}
+			return Fail<bool> (regResult.StatusCode);
 		}
 
-		[HttpPost]
-		public LoginResponse Login (LoginRequest request)
+		public BaseResponse<LoginResult> Login (LoginRequest request)
 		{
-			var result = _accountService.Login (request);
+			var parameter = Mapper.Map<LoginParameter> (request);
 
-			return result;
+			var loginResult = _accountService.Login (parameter);
+
+			if (loginResult.IsSuccess) {
+				var data = Mapper.Map<LoginResult> (loginResult.Result);
+				return Success (data);
+			}
+
+			return Fail<LoginResult> (loginResult.StatusCode);
 		}
-
 	}
 }

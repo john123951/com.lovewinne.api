@@ -29,16 +29,30 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="log4net">
+      <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Text">
+      <HintPath>..\packages\ServiceStack.Text.4.0.36\lib\net40\ServiceStack.Text.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Extentions\DateTimeExtention.cs" />
     <Compile Include="Extentions\StringExtention.cs" />
     <Compile Include="Security\AesEncrypt.cs" />
+    <Compile Include="LogUtility.cs" />
+    <Compile Include="Serialization\JsonUtility.cs" />
+    <Compile Include="StatusUtility.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <Folder Include="Extentions\" />
     <Folder Include="Security\" />
+    <Folder Include="Serialization\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>

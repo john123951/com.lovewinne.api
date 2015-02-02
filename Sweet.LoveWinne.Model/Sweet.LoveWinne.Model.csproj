@@ -45,21 +45,10 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Enum\QuestionTypeEnum.cs" />
-    <Compile Include="Messages\ShadowServer\GetServerListRequest.cs" />
-    <Compile Include="Messages\ShadowServer\GetServerListResponse.cs" />
-    <Compile Include="Messages\Authentication\AuthRequest.cs" />
     <Compile Include="Dto\Account\UserInfoDto.cs" />
     <Compile Include="Dto\ShadowProxy\ServerDto.cs" />
-    <Compile Include="Messages\Account\LoginRequest.cs" />
-    <Compile Include="Messages\Account\LoginResponse.cs" />
-    <Compile Include="Messages\Account\RegisterRequest.cs" />
-    <Compile Include="Messages\Account\RegisterResponse.cs" />
-    <Compile Include="Messages\Question\GetQuestionListRequest.cs" />
-    <Compile Include="Messages\Question\GetQuestionListResponse.cs" />
     <Compile Include="Dto\Question\QuestionDto.cs" />
     <Compile Include="Dto\Question\AnswerQuestionItem.cs" />
-    <Compile Include="Messages\Question\AnswertQuestionListRequest.cs" />
-    <Compile Include="Messages\Question\AnswertQuestionListResponse.cs" />
     <Compile Include="Entity\Users\UserInfo.cs" />
     <Compile Include="Entity\Users\RoleInfo.cs" />
     <Compile Include="Entity\Users\ActionInfo.cs" />
@@ -69,6 +58,20 @@
     <Compile Include="Entity\Questions\QuestionAnswer.cs" />
     <Compile Include="Entity\Products\ServerInfo.cs" />
     <Compile Include="Entity\Notify\NotifyInfo.cs" />
+    <Compile Include="Services\LoginParameter.cs" />
+    <Compile Include="Services\RegisterParameter.cs" />
+    <Compile Include="Controllers\ShadowServer\GetServerListRequest.cs" />
+    <Compile Include="Controllers\ShadowServer\GetServerListResult.cs" />
+    <Compile Include="Controllers\Authentication\AuthRequest.cs" />
+    <Compile Include="Controllers\Account\LoginRequest.cs" />
+    <Compile Include="Controllers\Account\LoginResult.cs" />
+    <Compile Include="Controllers\Account\RegisterRequest.cs" />
+    <Compile Include="Controllers\Question\GetQuestionListRequest.cs" />
+    <Compile Include="Controllers\Question\GetQuestionListResult.cs" />
+    <Compile Include="Controllers\Question\AnswertQuestionListRequest.cs" />
+    <Compile Include="Controllers\Question\AnswertQuestionListResult.cs" />
+    <Compile Include="Services\LoginModel.cs" />
+    <Compile Include="Enum\ApiStatusCode.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -85,19 +88,20 @@
     <Folder Include="Dto\" />
     <Folder Include="Entity\" />
     <Folder Include="Enum\" />
-    <Folder Include="Messages\" />
-    <Folder Include="Messages\ShadowServer\" />
-    <Folder Include="Messages\Authentication\" />
     <Folder Include="Dto\Account\" />
     <Folder Include="Dto\ShadowProxy\" />
-    <Folder Include="Messages\Account\" />
-    <Folder Include="Messages\Question\" />
     <Folder Include="Dto\Question\" />
     <Folder Include="Entity\Users\" />
     <Folder Include="Entity\Questions\" />
     <Folder Include="Entity\Products\" />
-    <Folder Include="Messages\Notify\" />
     <Folder Include="Entity\Notify\" />
+    <Folder Include="Services\" />
+    <Folder Include="Controllers\" />
+    <Folder Include="Controllers\ShadowServer\" />
+    <Folder Include="Controllers\Authentication\" />
+    <Folder Include="Controllers\Account\" />
+    <Folder Include="Controllers\Question\" />
+    <Folder Include="Controllers\Notify\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

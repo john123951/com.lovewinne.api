@@ -1,5 +1,6 @@
 ﻿using System;
 using Sweet.LoveWinne.Model;
+using Sweet.LoveWinne.Infrastructure;
 
 namespace Sweet.LoveWinne.Service
 {
@@ -9,7 +10,7 @@ namespace Sweet.LoveWinne.Service
 		/// Register User
 		/// </summary>
 		/// <param name="request">Request.</param>
-		RegisterResponse Register (RegisterRequest request);
+		ServicesResult<UserInfo> Register (RegisterParameter parameter);
 
 		/// <summary>
 		/// Login
@@ -18,7 +19,7 @@ namespace Sweet.LoveWinne.Service
 		/// login_000002	用户未授权
 		/// </summary>
 		/// <param name="request">Request.</param>
-		LoginResponse Login (LoginRequest request);
+		ServicesResult<LoginModel> Login (LoginParameter parameter);
 	}
 }
 

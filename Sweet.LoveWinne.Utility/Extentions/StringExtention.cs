@@ -11,117 +11,91 @@ namespace Sweet.LoveWinne.Utility
 	/// </summary>
 	public static class StringExtention
 	{
-		public static string Utf8String(this byte[] bytes)
+		public static string Utf8String (this byte[] bytes)
 		{
-			return bytes == null ? null : Encoding.UTF8.GetString(bytes);
+			return bytes == null ? null : Encoding.UTF8.GetString (bytes);
 		}
 
-		public static byte[] Utf8Bytes(this string s)
+		public static byte[] Utf8Bytes (this string s)
 		{
-			return s.IsNullOrEmpty() ? null : Encoding.UTF8.GetBytes(s);
+			return s.IsNullOrEmpty () ? null : Encoding.UTF8.GetBytes (s);
 		}
 
-		public static bool IsNullOrEmpty(this string value)
+		public static bool IsNullOrEmpty (this string value)
 		{
-			return string.IsNullOrEmpty(value);
+			return string.IsNullOrEmpty (value);
 		}
 
-		public static NameValueCollection ToNameValueCollection(this string queryString)
+		public static NameValueCollection ToNameValueCollection (this string queryString)
 		{
-			if (string.IsNullOrWhiteSpace(queryString)) return new NameValueCollection();
+			if (string.IsNullOrWhiteSpace (queryString))
+				return new NameValueCollection ();
 
-			var queryParameters = new NameValueCollection();
-			var querySegments = queryString.Split('&');
+			var queryParameters = new NameValueCollection ();
+			var querySegments = queryString.Split ('&');
 
-			foreach (var segment in querySegments)
-			{
-				var parts = segment.Split('=');
-				if (parts.Length > 0)
-				{
-					var key = parts[0].Trim(new char[] { '?', ' ' });
-					var val = parts[1].Trim();
+			foreach (var segment in querySegments) {
+				var parts = segment.Split ('=');
+				if (parts.Length > 0) {
+					var key = parts [0].Trim (new char[] { '?', ' ' });
+					var val = parts [1].Trim ();
 
-					queryParameters.Add(key, val);
+					queryParameters.Add (key, val);
 				}
 			}
 
 			return queryParameters;
 		}
 
-		public static string ToCamelCase(this string s)
+		public static string ToCamelCase (this string s)
 		{
-			if (string.IsNullOrEmpty(s))
+			if (string.IsNullOrEmpty (s))
 				return s;
 
-			if (!char.IsUpper(s[0]))
+			if (!char.IsUpper (s [0]))
 				return s;
 
-			string camelCase = char.ToLower(s[0], CultureInfo.InvariantCulture).ToString(CultureInfo.InvariantCulture);
+			string camelCase = char.ToLower (s [0], CultureInfo.InvariantCulture).ToString (CultureInfo.InvariantCulture);
 			if (s.Length > 1)
-				camelCase += s.Substring(1);
+				camelCase += s.Substring (1);
 
 			return camelCase;
 		}
 
-		/// <summary>
-		/// 移除字符串中的Html标签
-		/// </summary>
-		/// <param name="src"></param>
-		/// <returns></returns>
-		public static string RemoveHtml(this string src)
+		public static void WriteLog (this string message, string name, Log4NetType logType)
 		{
-			if (string.IsNullOrEmpty(src)) { return string.Empty; }
+			var log = LogUtility.GetInstance ().GetLog (name);
+			if (log == null) {
+				return;
+			}
 
-			string rx = @"<(\S*?)[^>]*>.*?</\1>|<.*? />|<.*?>";
-			var result = Regex.Replace(src, rx, string.Empty, RegexOptions.IgnoreCase);
-			return result;
+			switch (logType) {
+				case Log4NetType.Debug:
+					log.Debug (message);
+					break;
+
+				case Log4NetType.Error:
+					log.Error (message);
+					break;
+
+				case Log4NetType.Fatal:
+					log.Fatal (message);
+					break;
+
+				case Log4NetType.Info:
+					log.Info (message);
+					break;
+
+				case Log4NetType.Warn:
+					log.Warn (message);
+					break;
+
+				default:
+					log.Warn (message);
+					break;
+			}
 		}
 
-		/// <summary>
-		/// 移除字符串中的Html编码字符
-		/// </summary>
-		/// <param name="src"></param>
-		/// <returns></returns>
-		public static string RemoveHtmlEncode(this string src)
-		{
-			if (string.IsNullOrEmpty(src)) { return string.Empty; }
-
-			return src.Replace("&nbsp;", string.Empty);
-		}
-
-		/// <summary>
-		/// 将HTML去除
-		/// </summary>
-		/// <param name="txt"></param>
-		/// <returns></returns>
-		public static string DelHTML(string txt)
-		{
-			txt = Regex.Replace(txt, @"<(.[^>]*)>", string.Empty);
-			txt = Regex.Replace(txt, @"&\w{1,7};", string.Empty);
-			txt = txt.Replace(" ", string.Empty);
-
-			//删除脚本
-			//Htmlstring = Regex.Replace(Htmlstring, @"<script[^>]*?>.*?</script>", "", RegexOptions.IgnoreCase);
-			//删除HTML
-			// Htmlstring = Regex.Replace(Htmlstring, @"<(.[^>]*)>", "", RegexOptions.IgnoreCase);
-			//Htmlstring = Regex.Replace(Htmlstring, @"([\r\n])[\s]+", "", RegexOptions.IgnoreCase);
-			//Htmlstring = Regex.Replace(Htmlstring, @"-->", "", RegexOptions.IgnoreCase);
-			//Htmlstring = Regex.Replace(Htmlstring, @"<!--.*", "", RegexOptions.IgnoreCase);
-			//Htmlstring = Regex.Replace(Htmlstring, @"&(quot|#34);", "\"", RegexOptions.IgnoreCase);
-			//Htmlstring = Regex.Replace(Htmlstring, @"&(amp|#38);", "&", RegexOptions.IgnoreCase);
-			//Htmlstring = Regex.Replace(Htmlstring, @"&(lt|#60);", "<", RegexOptions.IgnoreCase);
-			//Htmlstring = Regex.Replace(Htmlstring, @"&(gt|#62);", ">", RegexOptions.IgnoreCase);
-			//Htmlstring = Regex.Replace(Htmlstring, @"&(nbsp|#160);", " ", RegexOptions.IgnoreCase);
-			//Htmlstring = Regex.Replace(Htmlstring, @"&(iexcl|#161);", "\xa1", RegexOptions.IgnoreCase);
-			//Htmlstring = Regex.Replace(Htmlstring, @"&(cent|#162);", "\xa2", RegexOptions.IgnoreCase);
-			//Htmlstring = Regex.Replace(Htmlstring, @"&(pound|#163);", "\xa3", RegexOptions.IgnoreCase);
-			//Htmlstring = Regex.Replace(Htmlstring, @"&(copy|#169);", "\xa9", RegexOptions.IgnoreCase);
-			//Htmlstring = Regex.Replace(Htmlstring, @"&#(\d+);", "", RegexOptions.IgnoreCase);
-			// Htmlstring.Replace("<", "");
-			//Htmlstring.Replace(">", "");
-			// Htmlstring.Replace("\r\n", "");
-			return txt;
-		}
 	}
 }
 
