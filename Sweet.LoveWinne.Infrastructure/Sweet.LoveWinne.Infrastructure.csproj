@@ -63,6 +63,7 @@
     <Compile Include="Controller\DefaultApiController.cs" />
     <Compile Include="Model\Message\BaseResponse.cs" />
     <Compile Include="Authentication\AuthenticationInterceptor.cs" />
+    <Compile Include="Interface\IAuthenticationProvider.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

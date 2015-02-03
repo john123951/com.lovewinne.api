@@ -12,6 +12,12 @@ namespace Sweet.LoveWinne.Infrastructure
 		{
 			throw new NotImplementedException ();
 		}
+
+		private bool ValidateAuth (long userId)
+		{
+
+		}
+
 	}
 }
 

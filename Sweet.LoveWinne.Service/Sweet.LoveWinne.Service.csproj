@@ -41,7 +41,6 @@
     <Compile Include="Contract\IAccountService.cs" />
     <Compile Include="Contract\IShadowProxyService.cs" />
     <Compile Include="Contract\IQuestionService.cs" />
-    <Compile Include="Contract\IAuthenticationService.cs" />
     <Compile Include="AccountService.cs" />
     <Compile Include="Contract\INotifyService.cs" />
     <Compile Include="Mapper\MappingManager.cs" />

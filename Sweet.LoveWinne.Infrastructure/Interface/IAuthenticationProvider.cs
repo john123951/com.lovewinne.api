@@ -1,9 +1,9 @@
 ﻿using System;
 using Sweet.LoveWinne.Infrastructure;
 
-namespace Sweet.LoveWinne.Service
+namespace Sweet.LoveWinne.Infrastructure
 {
-	public interface IAuthenticationService
+	public interface IAuthenticationProvider
 	{
 		/// <summary>
 		/// 获取Token
