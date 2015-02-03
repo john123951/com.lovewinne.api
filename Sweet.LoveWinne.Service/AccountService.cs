@@ -20,7 +20,7 @@ namespace Sweet.LoveWinne.Service
 			_cacheProvider = cacheProvider;
 		}
 
-		public ServicesResult<UserInfo> Register (RegisterParameter parameter)
+		public ServicesResult<UserInfoDto> Register (RegisterParameter parameter)
 		{
 			var userInfo = new UserInfo {
 				UserName = parameter.UserName, 
@@ -33,14 +33,15 @@ namespace Sweet.LoveWinne.Service
 
 			if (id > 0) {
 				userInfo.Id = id;
+				var userDto = Mapper.Map<UserInfoDto> (userInfo);
 
-				return	Success (userInfo);
+				return	Success (userDto);
 			}
 
-			return Fail<UserInfo> ((int)ApiStatusCode.Account.RegisterFailed);
+			return Fail<UserInfoDto> ((int)ApiStatusCode.Account.RegisterFailed);
 		}
 
-		public ServicesResult<LoginModel> Login (LoginParameter parameter)
+		public ServicesResult<LoginDto> Login (LoginParameter parameter)
 		{
 			var userInfo = _userInfoRepository.LoadEntities (x => x.IsValid && x.UserName == parameter.UserName && x.Password == parameter.Password).FirstOrDefault ();
 
@@ -49,9 +50,10 @@ namespace Sweet.LoveWinne.Service
 				var token = Guid.NewGuid ().ToString ();
 
 				var notify = _notifyRepository.GetUserNotify (userInfo);
+				var userDto = Mapper.Map<UserInfoDto> (userInfo);
 
-				var result = new LoginModel { 
-					UserInfo = userInfo, 
+				var result = new LoginDto { 
+					UserInfo = userDto, 
 					AccessToken = token, 
 					Notify = notify.Content
 				};
@@ -60,7 +62,7 @@ namespace Sweet.LoveWinne.Service
 			}
 
 
-			return Fail<LoginModel> ((int)ApiStatusCode.Account.InvalidUserNameOrPassword);
+			return Fail<LoginDto> ((int)ApiStatusCode.Account.InvalidUserNameOrPassword);
 		}
 	}
 }

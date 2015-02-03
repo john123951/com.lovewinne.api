@@ -2,13 +2,13 @@
 
 namespace Sweet.LoveWinne.Model
 {
-	public class LoginModel
+	public class LoginDto
 	{
 		/// <summary>
 		/// 用户信息
 		/// </summary>
 		/// <value>The user info.</value>
-		public UserInfo UserInfo { get; set; }
+		public UserInfoDto UserInfo { get; set; }
 
 		/// <summary>
 		/// 访问令牌

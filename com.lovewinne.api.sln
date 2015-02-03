@@ -11,8 +11,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sweet.LoveWinne.Repository"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sweet.LoveWinne.Service", "Sweet.LoveWinne.Service\Sweet.LoveWinne.Service.csproj", "{1192BFEB-68B0-4184-98E4-260B97C2E968}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sweet.LoveWinne.Controller", "Sweet.LoveWinne.Controller\Sweet.LoveWinne.Controller.csproj", "{87A7ADAA-C39C-46F2-9709-4C9E94279D50}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sweet.LoveWinne.Infrastructure", "Sweet.LoveWinne.Infrastructure\Sweet.LoveWinne.Infrastructure.csproj", "{6D94FD2D-4567-438A-8B34-56191D0D8B17}"
 EndProject
 Global
@@ -41,10 +39,6 @@ Global
 		{6D94FD2D-4567-438A-8B34-56191D0D8B17}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6D94FD2D-4567-438A-8B34-56191D0D8B17}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6D94FD2D-4567-438A-8B34-56191D0D8B17}.Release|Any CPU.Build.0 = Release|Any CPU
-		{87A7ADAA-C39C-46F2-9709-4C9E94279D50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{87A7ADAA-C39C-46F2-9709-4C9E94279D50}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{87A7ADAA-C39C-46F2-9709-4C9E94279D50}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{87A7ADAA-C39C-46F2-9709-4C9E94279D50}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CA8FB1FC-C229-481E-815A-6575D598015F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CA8FB1FC-C229-481E-815A-6575D598015F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CA8FB1FC-C229-481E-815A-6575D598015F}.Release|Any CPU.ActiveCfg = Release|Any CPU

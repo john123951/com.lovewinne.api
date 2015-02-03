@@ -10,16 +10,13 @@ namespace Sweet.LoveWinne.Service
 		/// Register User
 		/// </summary>
 		/// <param name="request">Request.</param>
-		ServicesResult<UserInfo> Register (RegisterParameter parameter);
+		ServicesResult<UserInfoDto> Register (RegisterParameter parameter);
 
 		/// <summary>
 		/// Login
-		/// unknowError
-		/// login_000001	用户密码错误
-		/// login_000002	用户未授权
 		/// </summary>
 		/// <param name="request">Request.</param>
-		ServicesResult<LoginModel> Login (LoginParameter parameter);
+		ServicesResult<LoginDto> Login (LoginParameter parameter);
 	}
 }
 

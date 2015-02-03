@@ -58,10 +58,10 @@
       <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="AutoMapper">
-      <HintPath>..\packages\AutoMapper.3.3.0\lib\net40\AutoMapper.dll</HintPath>
+      <HintPath>..\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.dll</HintPath>
     </Reference>
     <Reference Include="AutoMapper.Net4">
-      <HintPath>..\packages\AutoMapper.3.3.0\lib\net40\AutoMapper.Net4.dll</HintPath>
+      <HintPath>..\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.Net4.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -77,6 +77,20 @@
     </Compile>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="BootStrapper.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\QuestionController.cs" />
+    <Compile Include="Controllers\ShadowServerController.cs" />
+    <Compile Include="Controllers\TraceController.cs" />
+    <Compile Include="Message\Account\LoginRequest.cs" />
+    <Compile Include="Message\Account\LoginResult.cs" />
+    <Compile Include="Message\Account\RegisterRequest.cs" />
+    <Compile Include="Message\Authentication\AuthRequest.cs" />
+    <Compile Include="Message\Question\AnswertQuestionListRequest.cs" />
+    <Compile Include="Message\Question\AnswertQuestionListResult.cs" />
+    <Compile Include="Message\Question\GetQuestionListRequest.cs" />
+    <Compile Include="Message\Question\GetQuestionListResult.cs" />
+    <Compile Include="Message\ShadowServer\GetServerListRequest.cs" />
+    <Compile Include="Message\ShadowServer\GetServerListResult.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
@@ -87,10 +101,6 @@
     </MonoDevelop>
   </ProjectExtensions>
   <ItemGroup>
-    <ProjectReference Include="..\Sweet.LoveWinne.Controller\Sweet.LoveWinne.Controller.csproj">
-      <Project>{87A7ADAA-C39C-46F2-9709-4C9E94279D50}</Project>
-      <Name>Sweet.LoveWinne.Controller</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Sweet.LoveWinne.Model\Sweet.LoveWinne.Model.csproj">
       <Project>{0E663345-B296-460A-A176-B0A60D1BD73E}</Project>
       <Name>Sweet.LoveWinne.Model</Name>
@@ -115,5 +125,6 @@
   <ItemGroup>
     <Folder Include="App_Start\" />
     <Folder Include="Config\" />
+    <Folder Include="Controllers\" />
   </ItemGroup>
 </Project>
