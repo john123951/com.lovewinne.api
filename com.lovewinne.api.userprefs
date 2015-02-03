@@ -1,23 +1,20 @@
 ﻿<Properties StartupItem="Sweet.LoveWinne.WebApiHost\Sweet.LoveWinne.WebApiHost.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="ChromeHTML" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Sweet.LoveWinne.Service\Contract\IAccountService.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Sweet.LoveWinne.Service\Mapper\MappingManager.cs">
     <Files>
-      <File FileName="Sweet.LoveWinne.Controller\AccountController.cs" Line="48" Column="48" />
       <File FileName="Sweet.LoveWinne.Service\Contract\IAccountService.cs" Line="1" Column="1" />
+      <File FileName="Sweet.LoveWinne.Service\AccountService.cs" Line="1" Column="1" />
+      <File FileName="Sweet.LoveWinne.Service\Contract\IAuthenticationService.cs" Line="1" Column="1" />
+      <File FileName="Sweet.LoveWinne.Service\Contract\IQuestionService.cs" Line="3" Column="3" />
+      <File FileName="Sweet.LoveWinne.Model\InputPara\GetQuestionListParameter.cs" Line="1" Column="1" />
+      <File FileName="Sweet.LoveWinne.Model\InputPara\AnswertQuestionListParameter.cs" Line="1" Column="1" />
+      <File FileName="Sweet.LoveWinne.Service\Mapper\MappingManager.cs" Line="4" Column="4" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
-          <Node name="Sweet.LoveWinne.Controller" expanded="True" />
-          <Node name="Sweet.LoveWinne.Model" expanded="True">
-            <Node name="Message" expanded="True" />
-            <Node name="Services" expanded="True" />
-          </Node>
-          <Node name="Sweet.LoveWinne.Service" expanded="True">
-            <Node name="Contract" expanded="True">
-              <Node name="IAccountService.cs" selected="True" />
-            </Node>
-          </Node>
+          <Node name="Sweet.LoveWinne.Service" expanded="True" />
+          <Node name="Sweet.LoveWinne.WebApiHost" expanded="True" />
         </State>
       </Pad>
     </Pads>

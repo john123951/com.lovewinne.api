@@ -44,6 +44,7 @@
     <Compile Include="Contract\IAuthenticationService.cs" />
     <Compile Include="AccountService.cs" />
     <Compile Include="Contract\INotifyService.cs" />
+    <Compile Include="Mapper\MappingManager.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -66,6 +67,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Contract\" />
+    <Folder Include="Mapper\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

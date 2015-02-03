@@ -18,9 +18,6 @@ namespace Sweet.LoveWinne.WebApiHost
 
 		private static void ConfigureMapping ()
 		{
-			Mapper.CreateMap<UserInfo, UserInfoDto> ();
-			Mapper.CreateMap<UserInfoDto, UserInfo> ();
-
 			Mapper.AssertConfigurationIsValid ();
 		}
 	}
