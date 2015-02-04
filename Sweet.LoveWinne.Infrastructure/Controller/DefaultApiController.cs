@@ -6,6 +6,8 @@ namespace Sweet.LoveWinne.Infrastructure
 {
 	public abstract class DefaultApiController : ApiController
 	{
+		public long UserId { get; set; }
+
 		public BaseResponse<T> Success<T> (T data)
 		{
 			var response = new BaseResponse<T> {

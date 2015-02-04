@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace Sweet.LoveWinne.Service
 {
-	public class AccountService :DefaultService , IAccountService
+	public class AccountService : DefaultService , IAccountService
 	{
 		IRepository<UserInfo> _userInfoRepository;
 		INotifyRepository _notifyRepository;
@@ -49,18 +49,18 @@ namespace Sweet.LoveWinne.Service
 
 				var token = Guid.NewGuid ().ToString ();
 
-				var notify = _notifyRepository.GetUserNotify (userInfo);
+				var notify = _notifyRepository.GetUserNotify (userInfo.Id);
 				var userDto = Mapper.Map<UserInfoDto> (userInfo);
+				var notifyDto = Mapper.Map<NotifyDto> (notify);
 
 				var result = new LoginDto { 
 					UserInfo = userDto, 
+					Notify = notifyDto,
 					AccessToken = token, 
-					Notify = notify.Content
 				};
 
 				return Success (result);
 			}
-
 
 			return Fail<LoginDto> ((int)ApiStatusCode.Account.InvalidUserNameOrPassword);
 		}

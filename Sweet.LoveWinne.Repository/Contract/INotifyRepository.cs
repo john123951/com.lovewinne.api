@@ -5,7 +5,7 @@ namespace Sweet.LoveWinne.Repository
 {
 	public interface INotifyRepository
 	{
-		NotifyInfo GetUserNotify (UserInfo userInfo);
+		NotifyInfo GetUserNotify (long userId);
 	}
 }
 

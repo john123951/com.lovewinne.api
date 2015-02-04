@@ -36,6 +36,7 @@
       <HintPath>..\packages\ServiceStack.Text.4.0.36\lib\net40\ServiceStack.Text.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml" />
+    <Reference Include="System.Net.Http" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -45,6 +46,9 @@
     <Compile Include="LogUtility.cs" />
     <Compile Include="Serialization\JsonUtility.cs" />
     <Compile Include="StatusUtility.cs" />
+    <Compile Include="Extentions\HttpNetExtention.cs" />
+    <Compile Include="Extentions\ExceptionExtention.cs" />
+    <Compile Include="Extentions\CollectionExtention.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

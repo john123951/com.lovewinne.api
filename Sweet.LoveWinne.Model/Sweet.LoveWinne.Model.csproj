@@ -44,7 +44,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Enum\QuestionTypeEnum.cs" />
     <Compile Include="Dto\Account\UserInfoDto.cs" />
     <Compile Include="Dto\ShadowProxy\ServerDto.cs" />
     <Compile Include="Dto\Question\QuestionDto.cs" />
@@ -56,14 +55,15 @@
     <Compile Include="Entity\Users\MachineInfo.cs" />
     <Compile Include="Entity\Questions\Question.cs" />
     <Compile Include="Entity\Questions\QuestionAnswer.cs" />
-    <Compile Include="Entity\Products\ServerInfo.cs" />
-    <Compile Include="Entity\Notify\NotifyInfo.cs" />
-    <Compile Include="Enum\ApiStatusCode.cs" />
     <Compile Include="InputPara\LoginParameter.cs" />
     <Compile Include="InputPara\RegisterParameter.cs" />
     <Compile Include="Dto\Account\LoginDto.cs" />
     <Compile Include="InputPara\GetQuestionListParameter.cs" />
     <Compile Include="InputPara\AnswertQuestionListParameter.cs" />
+    <Compile Include="Entity\NotifyInfo.cs" />
+    <Compile Include="Entity\ServerInfo.cs" />
+    <Compile Include="Dto\Notify\NotifyDto.cs" />
+    <Compile Include="Enum\QuestionTypeEnum.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -88,6 +88,7 @@
     <Folder Include="Entity\Products\" />
     <Folder Include="Entity\Notify\" />
     <Folder Include="InputPara\" />
+    <Folder Include="Dto\Notify\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

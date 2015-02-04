@@ -11,16 +11,16 @@ namespace Sweet.LoveWinne.Model
 		public UserInfoDto UserInfo { get; set; }
 
 		/// <summary>
+		/// 通告
+		/// </summary>
+		/// <value>The notify.</value>
+		public NotifyDto Notify { get; set; }
+
+		/// <summary>
 		/// 访问令牌
 		/// </summary>
 		/// <value>The access token.</value>
 		public string AccessToken { get; set; }
-
-		/// <summary>
-		/// 通告
-		/// </summary>
-		/// <value>The notify.</value>
-		public string Notify { get; set; }
 	}
 }
 

@@ -54,6 +54,7 @@
     <Compile Include="OrmLiteRepository.cs" />
     <Compile Include="Contract\INotifyRepository.cs" />
     <Compile Include="Contract\IRepository.cs" />
+    <Compile Include="Contract\IShadowServerRepository.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

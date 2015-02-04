@@ -24,6 +24,11 @@ namespace Sweet.LoveWinne.Model
 			/// </summary>
 			InvalidUserNameOrPassword = 10002,
 		}
+
+		public enum ShadowServer
+		{
+			GetServerListFailed = 20001,
+		}
 	}
 }
 

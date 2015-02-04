@@ -6,23 +6,19 @@ namespace Sweet.LoveWinne.Infrastructure
 	public interface IAuthenticationProvider
 	{
 		/// <summary>
-		/// 获取Token
+		/// Set the access token.
 		/// </summary>
-		/// <param name="accessToken">The accessToken</param>
-		/// <returns>
-		/// ServicesResult{TokenModel}
-		/// </returns>
-		//		ServicesResult<TokenModel> GetToken (string accessToken);
+		/// <returns>The token.</returns>
+		/// <param name="accessToken">Access token.</param>
+		ServicesResult<bool> SetToken (TokenDto accessToken);
 
 		/// <summary>
-		/// 验证客户端
+		/// Gets the token.
 		/// </summary>
-		/// <param name="appKey">The appKey</param>
-		/// <param name="appPassword">The appPassword</param>
-		/// <returns>
-		/// Boolean}
-		/// </returns>
-		ServicesResult<bool> ValidateApp (string appKey, string appPassword);
+		/// <returns>The token.</returns>
+		/// <param name="userId">User identifier.</param>
+		/// <param name="accessToken">Access token.</param>
+		ServicesResult<TokenDto> ValidateToken (long userId, string accessToken);
 	}
 }
 

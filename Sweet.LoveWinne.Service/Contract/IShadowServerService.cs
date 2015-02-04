@@ -1,17 +1,18 @@
 ﻿using System;
 using Sweet.LoveWinne.Model;
 using Sweet.LoveWinne.Infrastructure;
+using System.Collections.Generic;
 
 namespace Sweet.LoveWinne.Service
 {
-	public interface IShadowProxyService
+	public interface IShadowServerService
 	{
 		/// <summary>
 		/// Gets the server list.
 		/// </summary>
 		/// <returns>The server list.</returns>
 		/// <param name="request">Request.</param>
-		ServicesResultList<ServerInfo> GetServerList ();
+		ServicesResult<List<ServerDto>> GetServerList (long userId);
 	}
 }
 

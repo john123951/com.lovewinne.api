@@ -11,9 +11,9 @@ namespace Sweet.LoveWinne.Controller
 {
 	public class ShadowServerController : ApiController
 	{
-		IShadowProxyService _shadowProxyService;
+		IShadowServerService _shadowProxyService;
 
-		public ShadowServerController (IShadowProxyService shadowProxyService)
+		public ShadowServerController (IShadowServerService shadowProxyService)
 		{
 			_shadowProxyService = shadowProxyService;			
 		}

@@ -8,16 +8,23 @@ namespace Sweet.LoveWinne.Infrastructure
 	/// </summary>
 	public class AuthenticationInterceptor : IInterceptor
 	{
+		public long UserId { get; set; }
+
 		public void Intercept (IInvocation invocation)
 		{
-			throw new NotImplementedException ();
+			var authResult = ValidateAuth (this.UserId);
+
+			if (authResult.IsSuccess) {
+				invocation.Proceed ();
+			} else {
+				invocation.ReturnValue = authResult;
+			}
 		}
 
-		private bool ValidateAuth (long userId)
+		private DefaultServicesResult ValidateAuth (long userId)
 		{
-
+			return new DefaultServicesResult ();
 		}
-
 	}
 }
 

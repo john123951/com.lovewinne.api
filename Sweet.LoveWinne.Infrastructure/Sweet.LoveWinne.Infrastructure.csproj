@@ -37,9 +37,16 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Net.Http" />
-    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
     <Reference Include="Castle.Core">
       <HintPath>..\packages\Castle.Core.3.3.3\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.2\lib\net45\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -64,6 +71,10 @@
     <Compile Include="Model\Message\BaseResponse.cs" />
     <Compile Include="Authentication\AuthenticationInterceptor.cs" />
     <Compile Include="Interface\IAuthenticationProvider.cs" />
+    <Compile Include="Controller\Filters\TokenFilterAttribute.cs" />
+    <Compile Include="Authentication\TokenDto.cs" />
+    <Compile Include="BootstrapManager.cs" />
+    <Compile Include="Controller\DelegatingHandler\IgnoreJsonHeaderHandler.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -75,6 +86,9 @@
     <Folder Include="Model\Enum\" />
     <Folder Include="Model\ServicesResult\" />
     <Folder Include="Controller\" />
+    <Folder Include="Controller\Filters\" />
+    <Folder Include="Controller\DelegatingHandler\" />
+    <Folder Include="Controller\HttpModule\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
